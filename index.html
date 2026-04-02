@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AMA × Level Agency — 18-Month Digital Marketing Roadmap</title>
+    <title>Level × AMA — 18-Month Performance Roadmap</title>
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:wght@700;800;900&display=swap"
         rel="stylesheet">
@@ -17,16 +17,12 @@
             --ama-slate: #3D4F6F;
             --ama-warm-gray: #F5F3F0;
             --ama-cream: #FFFDF9;
-            --ama-gold: #D4A843;
-            --ama-gold-light: #F0D68A;
             --white: #FFFFFF;
             --text-primary: #1A1A2E;
             --text-secondary: #5A5A72;
             --border-light: #E8E4DF;
-
             --font-display: 'Playfair Display', Georgia, serif;
             --font-body: 'DM Sans', -apple-system, sans-serif;
-
             --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
         }
 
@@ -48,6 +44,42 @@
             -webkit-font-smoothing: antialiased;
         }
 
+        /* ─── LOGO BAR ─── */
+        .logo-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 200;
+            background: var(--white);
+            border-bottom: 1px solid var(--border-light);
+            padding: 14px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 28px;
+        }
+
+        .logo-bar .level-logo svg {
+            height: 18px;
+            width: auto;
+            display: block;
+        }
+
+        .logo-bar .logo-x {
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 500;
+            color: #999;
+            letter-spacing: 2px;
+        }
+
+        .logo-bar .ama-logo img {
+            height: 22px;
+            width: auto;
+            display: block;
+        }
+
         /* ─── HERO ─── */
         .hero {
             position: relative;
@@ -57,7 +89,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 80px 24px 120px;
+            padding: 120px 24px 120px;
             background: var(--ama-navy);
             overflow: hidden;
         }
@@ -132,9 +164,9 @@
         }
 
         .hero-sub {
-            font-size: clamp(1rem, 2vw, 1.25rem);
+            font-size: clamp(1rem, 2vw, 1.2rem);
             color: rgba(255, 255, 255, 0.6);
-            max-width: 580px;
+            max-width: 620px;
             line-height: 1.7;
             margin-bottom: 48px;
             opacity: 0;
@@ -142,31 +174,51 @@
             animation: fadeUp 1s var(--ease-out-expo) 0.6s forwards;
         }
 
-        .hero-meta {
+        .hero-phases {
             display: flex;
-            gap: 48px;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
             opacity: 0;
             transform: translateY(30px);
             animation: fadeUp 1s var(--ease-out-expo) 0.8s forwards;
         }
 
-        .hero-meta-item {
-            text-align: center;
+        .phase-chip {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 16px 24px;
+            text-align: left;
         }
 
-        .hero-meta-item .number {
+        .phase-chip .phase-num {
             font-family: var(--font-display);
-            font-size: 2.5rem;
+            font-size: 1.4rem;
             font-weight: 800;
+            color: var(--ama-red-light);
+            line-height: 1;
+        }
+
+        .phase-chip .phase-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .phase-chip .phase-name {
+            font-size: 14px;
+            font-weight: 600;
             color: var(--white);
         }
 
-        .hero-meta-item .label {
+        .phase-chip .phase-months {
             font-size: 11px;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
             color: rgba(255, 255, 255, 0.4);
-            margin-top: 4px;
+            letter-spacing: 0.5px;
         }
 
         .scroll-hint {
@@ -196,7 +248,7 @@
         /* ─── NAV PILLS ─── */
         .quarter-nav {
             position: sticky;
-            top: 0;
+            top: 49px;
             z-index: 100;
             background: rgba(255, 253, 249, 0.92);
             backdrop-filter: blur(20px);
@@ -222,7 +274,7 @@
 
         .q-pill {
             flex-shrink: 0;
-            padding: 10px 20px;
+            padding: 10px 18px;
             border-radius: 100px;
             font-size: 13px;
             font-weight: 600;
@@ -244,10 +296,6 @@
             background: var(--ama-red);
             color: var(--white);
             border-color: var(--ama-red);
-        }
-
-        .q-pill .pill-label {
-            display: inline;
         }
 
         /* ─── QUARTERS ─── */
@@ -350,7 +398,7 @@
         /* ─── ACTIVITY CARDS ─── */
         .activity-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 20px;
         }
 
@@ -358,7 +406,7 @@
             background: var(--white);
             border: 1px solid var(--border-light);
             border-radius: 20px;
-            padding: 32px;
+            padding: 28px;
             position: relative;
             overflow: hidden;
             transition: all 0.4s var(--ease-out-expo);
@@ -413,7 +461,7 @@
             align-items: center;
             justify-content: center;
             font-size: 20px;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         .card-q1 .card-icon {
@@ -445,7 +493,7 @@
             font-weight: 700;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .card-q1 .card-category {
@@ -474,18 +522,40 @@
 
         .card-title {
             font-family: var(--font-display);
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             font-weight: 700;
             line-height: 1.3;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             color: var(--text-primary);
         }
 
         .card-body {
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             line-height: 1.7;
             color: var(--text-secondary);
-            margin-bottom: 20px;
+            margin-bottom: 16px;
+        }
+
+        .card-body ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .card-body ul li {
+            position: relative;
+            padding-left: 16px;
+            margin-bottom: 6px;
+        }
+
+        .card-body ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--border-light);
         }
 
         .card-tags {
@@ -521,7 +591,7 @@
 
         .kpi-value {
             font-family: var(--font-display);
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 800;
             line-height: 1;
             margin-bottom: 6px;
@@ -561,6 +631,142 @@
             letter-spacing: 3px;
             text-transform: uppercase;
             color: var(--ama-red);
+        }
+
+        /* ─── WEBSITE ASSESSMENT ─── */
+        .assessment-section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 24px 100px;
+        }
+
+        .assessment-card {
+            background: var(--white);
+            border: 1px solid var(--border-light);
+            border-radius: 24px;
+            padding: 48px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .assessment-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--ama-red), var(--ama-navy));
+        }
+
+        .assessment-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 24px;
+            color: var(--text-primary);
+        }
+
+        .assessment-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 32px;
+        }
+
+        .assess-col h4 {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .assess-col.constraints h4 {
+            color: var(--ama-red);
+        }
+
+        .assess-col.solutions h4 {
+            color: #2D6A4F;
+        }
+
+        .assess-col p {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .timeline-bar {
+            background: var(--ama-warm-gray);
+            border-radius: 12px;
+            padding: 20px 28px;
+            display: flex;
+            gap: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .timeline-bar-segment {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            padding: 8px 0;
+        }
+
+        .timeline-bar-segment::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 20%;
+            bottom: 20%;
+            width: 1px;
+            background: var(--border-light);
+        }
+
+        .timeline-bar-segment:last-child::after {
+            display: none;
+        }
+
+        .timeline-bar-segment .seg-label {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .timeline-bar-segment .seg-months {
+            font-size: 11px;
+            color: var(--text-secondary);
+        }
+
+        /* ─── MEASUREMENT ─── */
+        .measurement-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .measure-card {
+            background: var(--ama-warm-gray);
+            border-radius: 16px;
+            padding: 24px;
+        }
+
+        .measure-card h5 {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--ama-red);
+            margin-bottom: 12px;
+        }
+
+        .measure-card p {
+            font-size: 0.85rem;
+            line-height: 1.65;
+            color: var(--text-secondary);
         }
 
         /* ─── FOOTER CTA ─── */
@@ -671,10 +877,9 @@
 
         /* ─── RESPONSIVE ─── */
         @media (max-width: 768px) {
-            .hero-meta {
-                gap: 32px;
-                flex-wrap: wrap;
-                justify-content: center;
+            .hero-phases {
+                flex-direction: column;
+                align-items: center;
             }
 
             .quarter-header {
@@ -696,591 +901,777 @@
             .kpi-strip {
                 grid-template-columns: 1fr 1fr;
             }
+
+            .assessment-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .measurement-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .logo-bar {
+                gap: 16px;
+                padding: 10px 16px;
+            }
+
+            .logo-bar .level-logo svg {
+                height: 14px;
+            }
+
+            .logo-bar .ama-logo img {
+                height: 18px;
+            }
         }
     </style>
 </head>
 
 <body>
 
+    <!-- ═══════ LOGO BAR ═══════ -->
+    <div class="logo-bar">
+        <span class="level-logo">
+            <svg viewBox="0 0 1088.59 200.05" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#231f20"
+                    d="M910.08,200.05c-4.71,0-8.54-3.83-8.54-8.54s3.83-8.54,8.54-8.54h169.97c4.71,0,8.54,3.83,8.54,8.54s-3.83,8.54-8.54,8.54h-169.97ZM699.41,200.05c-4.71,0-8.54-3.83-8.54-8.54s3.83-8.54,8.54-8.54h169.97c4.71,0,8.54,3.83,8.54,8.54s-3.83,8.54-8.54,8.54h-169.97ZM479.93,200.05c-4.71,0-8.54-3.83-8.54-8.54s3.83-8.54,8.54-8.54h124.56c4.71,0,8.54,3.83,8.54,8.54s-3.83,8.54-8.54,8.54h-124.56ZM216.92,200.05c-4.71,0-8.54-3.83-8.54-8.54s3.83-8.54,8.54-8.54h169.97c4.71,0,8.54,3.83,8.54,8.54s-3.83,8.54-8.54,8.54h-169.97ZM8.54,200.05c-4.71,0-8.54-3.83-8.54-8.54s3.83-8.54,8.54-8.54h169.97c4.71,0,8.54,3.83,8.54,8.54s-3.83,8.54-8.54,8.54H8.54ZM910.08,169.56c-4.71,0-8.54-3.83-8.54-8.54s3.83-8.54,8.54-8.54h169.97c4.71,0,8.54,3.83,8.54,8.54s-3.83,8.54-8.54,8.54h-169.97ZM699.41,169.56c-4.71,0-8.54-3.83-8.54-8.54s3.83-8.54,8.54-8.54h169.97c4.71,0,8.54,3.83,8.54,8.54s-3.83,8.54-8.54,8.54h-169.97ZM469.39,169.56c-4.71,0-8.54-3.83-8.54-8.54s3.83-8.54,8.54-8.54h145.65c4.71,0,8.54,3.83,8.54,8.54s-3.83,8.54-8.54,8.54h-145.65ZM216.92,169.56c-4.71,0-8.54-3.83-8.54-8.54s3.83-8.54,8.54-8.54h169.97c4.71,0,8.54,3.83,8.54,8.54s-3.83,8.54-8.54,8.54h-169.97ZM8.54,169.56c-4.71,0-8.54-3.83-8.54-8.54s3.83-8.54,8.54-8.54h169.97c4.71,0,8.54,3.83,8.54,8.54s-3.83,8.54-8.54,8.54H8.54ZM910.08,139.06c-4.71,0-8.54-3.83-8.54-8.54s3.83-8.54,8.54-8.54h89.95c4.71,0,8.54,3.83,8.54,8.54s-3.83,8.54-8.54,8.54h-89.95ZM699.41,139.06c-4.71,0-8.54-3.83-8.54-8.54s3.83-8.54,8.54-8.54h89.95c4.71,0,8.54,3.83,8.54,8.54s-3.83,8.54-8.54,8.54h-89.95ZM459.3,139.06c-4.71,0-8.54-3.83-8.54-8.54s3.83-8.54,8.54-8.54h165.81c4.71,0,8.54,3.83,8.54,8.54s-3.83,8.54-8.54,8.54h-165.81ZM216.92,139.06c-4.71,0-8.54-3.83-8.54-8.54s3.83-8.54,8.54-8.54h89.95c4.71,0,8.54,3.83,8.54,8.54s-3.83,8.54-8.54,8.54h-89.95ZM8.54,139.06c-4.71,0-8.54-3.83-8.54-8.54s3.83-8.54,8.54-8.54h89.95c4.71,0,8.54,3.83,8.54,8.54s-3.83,8.54-8.54,8.54H8.54ZM910.08,108.57c-4.71,0-8.54-3.83-8.54-8.54s3.83-8.54,8.54-8.54h89.95c4.71,0,8.54,3.83,8.54,8.54s-3.83,8.54-8.54,8.54h-89.95ZM699.41,108.57c-4.71,0-8.54-3.83-8.54-8.54s3.83-8.54,8.54-8.54h131.13c4.71,0,8.54,3.83,8.54,8.54s-3.83,8.54-8.54,8.54h-131.13ZM556.65,108.57c-4.71,0-8.54-3.83-8.54-8.54s3.83-8.54,8.54-8.54h78.47c4.71,0,8.54,3.83,8.54,8.54s-3.83,8.54-8.54,8.54h-78.47ZM449.31,108.57c-4.71,0-8.54-3.83-8.54-8.54s3.83-8.54,8.54-8.54h78.47c4.71,0,8.54,3.83,8.54,8.54s-3.83,8.54-8.54,8.54h-78.47ZM216.92,108.57c-4.71,0-8.54-3.83-8.54-8.54s3.83-8.54,8.54-8.54h131.13c4.71,0,8.54,3.83,8.54,8.54s-3.83,8.54-8.54,8.54h-131.13ZM8.54,108.57c-4.71,0-8.54-3.83-8.54-8.54s3.83-8.54,8.54-8.54h89.95c4.71,0,8.54,3.83,8.54,8.54s-3.83,8.54-8.54,8.54H8.54ZM910.08,78.07c-4.71,0-8.54-3.83-8.54-8.54s3.83-8.54,8.54-8.54h89.95c4.71,0,8.54,3.83,8.54,8.54s-3.83,8.54-8.54,8.54h-89.95ZM699.41,78.07c-4.71,0-8.54-3.83-8.54-8.54s3.83-8.54,8.54-8.54h89.95c4.71,0,8.54,3.83,8.54,8.54s-3.83,8.54-8.54,8.54h-89.95ZM216.92,78.07c-4.71,0-8.54-3.83-8.54-8.54s3.83-8.54,8.54-8.54h89.95c4.71,0,8.54,3.83,8.54,8.54s-3.83,8.54-8.54,8.54h-89.95ZM8.54,78.07c-4.71,0-8.54-3.83-8.54-8.54s3.83-8.54,8.54-8.54h89.95c4.71,0,8.54,3.83,8.54,8.54s-3.83,8.54-8.54,8.54H8.54ZM566.86,78.07c-4.71,0-8.54-3.83-8.54-8.54s3.83-8.54,8.54-8.54h78.47c4.71,0,8.54,3.83,8.54,8.54s-3.83,8.54-8.54,8.54h-78.47ZM439.09,78.07c-4.71,0-8.54-3.83-8.54-8.54s3.83-8.54,8.54-8.54h78.47c4.71,0,8.54,3.83,8.54,8.54s-3.83,8.54-8.54,8.54h-78.47ZM910.08,47.57c-4.71,0-8.54-3.83-8.54-8.54s3.83-8.54,8.54-8.54h89.95c4.71,0,8.54,3.83,8.54,8.54s-3.83,8.54-8.54,8.54h-89.95ZM576.8,47.57c-4.71,0-8.54-3.83-8.54-8.54s3.83-8.54,8.54-8.54h78.47c4.71,0,8.54,3.83,8.54,8.54s-3.83,8.54-8.54,8.54h-78.47ZM429.15,47.57c-4.71,0-8.54-3.83-8.54-8.54s3.83-8.54,8.54-8.54h78.47c4.71,0,8.54,3.83,8.54,8.54s-3.83,8.54-8.54,8.54h-78.47ZM8.54,47.57c-4.71,0-8.54-3.83-8.54-8.54s3.83-8.54,8.54-8.54h89.95c4.71,0,8.54,3.83,8.54,8.54s-3.83,8.54-8.54,8.54H8.54ZM699.41,47.57c-4.71,0-8.54-3.83-8.54-8.54s3.83-8.54,8.54-8.54h169.97c4.71,0,8.54,3.83,8.54,8.54s-3.83,8.54-8.54,8.54h-169.97ZM216.92,47.57c-4.71,0-8.54-3.83-8.54-8.54s3.83-8.54,8.54-8.54h169.97c4.71,0,8.54,3.83,8.54,8.54s-3.83,8.54-8.54,8.54h-169.97ZM910.08,17.08c-4.71,0-8.54-3.83-8.54-8.54s3.83-8.54,8.54-8.54h89.95c4.71,0,8.54,3.83,8.54,8.54s-3.83,8.54-8.54,8.54h-89.95ZM699.41,17.08c-4.71,0-8.54-3.83-8.54-8.54s3.83-8.54,8.54-8.54h169.97c4.71,0,8.54,3.83,8.54,8.54s-3.83,8.54-8.54,8.54h-169.97ZM587.15,17.08c-4.71,0-8.54-3.83-8.54-8.54s3.83-8.54,8.54-8.54h78.47c4.71,0,8.54,3.83,8.54,8.54s-3.83,8.54-8.54,8.54h-78.47ZM418.8,17.08c-4.71,0-8.54-3.83-8.54-8.54s3.83-8.54,8.54-8.54h78.47c4.71,0,8.54,3.83,8.54,8.54s-3.83,8.54-8.54,8.54h-78.47ZM216.92,17.08c-4.71,0-8.54-3.83-8.54-8.54s3.83-8.54,8.54-8.54h169.97c4.71,0,8.54,3.83,8.54,8.54s-3.83,8.54-8.54,8.54h-169.97ZM8.54,17.08C3.83,17.08,0,13.25,0,8.54S3.83,0,8.54,0h89.95c4.71,0,8.54,3.83,8.54,8.54s-3.83,8.54-8.54,8.54H8.54Z" />
+            </svg>
+        </span>
+        <span class="logo-x">×</span>
+        <span class="ama-logo">
+            <img src="https://www.amanet.org/cms/images/logo/ama-logo_377X40.png"
+                alt="American Management Association" />
+        </span>
+    </div>
+
     <!-- ═══════ HERO ═══════ -->
     <section class="hero">
-        <div class="hero-badge">
-            <span class="dot"></span>
-            Strategic Roadmap
+        <div class="hero-badge"><span class="dot"></span>18-Month Performance Roadmap</div>
+        <h1>Recover. <em>Rebuild.</em> Scale.</h1>
+        <p class="hero-sub">AMA aims to regain lost 2025 revenue and re-stabilize paid media and SEO performance. This
+            roadmap addresses technical/tactical recovery and strategic brand transformation in parallel: near-term
+            revenue recovery while building the digital and brand infrastructure for durable growth.</p>
+        <div class="hero-phases">
+            <div class="phase-chip"><span class="phase-num">01</span><span class="phase-info"><span
+                        class="phase-name">Fix &amp; Discover</span><span class="phase-months">Months 1–6</span></span>
+            </div>
+            <div class="phase-chip"><span class="phase-num">02</span><span class="phase-info"><span
+                        class="phase-name">Build</span><span class="phase-months">Months 7–12</span></span></div>
+            <div class="phase-chip"><span class="phase-num">03</span><span class="phase-info"><span
+                        class="phase-name">Launch &amp; Scale</span><span class="phase-months">Months
+                        13–18</span></span></div>
         </div>
-        <h1>18 Months to <em>Transform</em> AMA's Digital&nbsp;Presence</h1>
-        <p class="hero-sub">A phased rollout plan for paid media, SEO, content strategy, and performance analytics —
-            built to drive enrollment growth and brand authority for the American Management Association.</p>
-        <div class="hero-meta">
-            <div class="hero-meta-item">
-                <div class="number">6</div>
-                <div class="label">Quarters</div>
-            </div>
-            <div class="hero-meta-item">
-                <div class="number">4</div>
-                <div class="label">Service Pillars</div>
-            </div>
-            <div class="hero-meta-item">
-                <div class="number">18</div>
-                <div class="label">Month Horizon</div>
-            </div>
-        </div>
-        <div class="scroll-hint">
-            Explore the plan
-            <div class="arrow"></div>
+        <div class="scroll-hint">Explore the plan<div class="arrow"></div>
         </div>
     </section>
 
     <!-- ═══════ STICKY NAV ═══════ -->
     <nav class="quarter-nav">
         <div class="quarter-nav-inner">
-            <a href="#q1" class="q-pill active">Q1 · Foundation</a>
-            <a href="#q2" class="q-pill">Q2 · Launch</a>
-            <a href="#q3" class="q-pill">Q3 · Scale</a>
-            <a href="#q4" class="q-pill">Q4 · Optimize</a>
-            <a href="#q5" class="q-pill">Q5 · Expand</a>
-            <a href="#q6" class="q-pill">Q6 · Mature</a>
+            <a href="#q1" class="q-pill active">Q1 · Reset</a>
+            <a href="#q2" class="q-pill">Q2 · Foundation</a>
+            <a href="#q3" class="q-pill">Q3 · Develop</a>
+            <a href="#q4" class="q-pill">Q4 · Pre-Launch</a>
+            <a href="#q5" class="q-pill">Q5 · Launch</a>
+            <a href="#q6" class="q-pill">Q6 · Optimize</a>
         </div>
     </nav>
 
-    <!-- ═══════ TIMELINE CONTENT ═══════ -->
+    <!-- ═══════ TIMELINE ═══════ -->
     <div class="timeline-container">
 
-        <!-- ── Q1 ── -->
+        <!-- Q1 -->
         <section class="quarter-section" id="q1">
             <div class="quarter-header">
                 <div class="quarter-marker q1-color">Q1</div>
                 <div class="quarter-title-block">
-                    <div class="date-range">Months 1–3 · Foundation &amp; Discovery</div>
-                    <h2>Audit, Align, Architect</h2>
-                    <p class="quarter-desc">Deep-dive into AMA's existing digital ecosystem. Establish measurement
-                        infrastructure, baseline KPIs, and build the strategic framework that everything else depends
-                        on. No shortcuts here — the foundation determines the ceiling.</p>
+                    <div class="date-range">Months 1–3 · Phase 1: Fix &amp; Discover</div>
+                    <h2>Reset</h2>
+                    <p class="quarter-desc">Media cleanup, SEO foundation, and discovery kickoffs. Stop the bleeding in
+                        paid search and SEO by executing on quick wins while simultaneously completing website and brand
+                        discovery to understand what's needed long term.</p>
                 </div>
             </div>
             <div class="activity-grid">
                 <div class="activity-card card-q1">
-                    <div class="card-icon">🔍</div>
-                    <div class="card-category">Discovery</div>
-                    <div class="card-title">Full-Funnel Digital Audit</div>
-                    <div class="card-body">Comprehensive audit of all paid, organic, and earned channels. Map conversion
-                        paths from awareness through enrollment. Identify leakage, attribution gaps, and quick wins.
+                    <div class="card-icon">💰</div>
+                    <div class="card-category">Paid Media</div>
+                    <div class="card-title">Account Restructure &amp; Waste Recovery</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>PMAX restructure: brand exclusions, force incremental acquisition</li>
+                            <li>Brand/non-brand campaign separation (55%+ of non-brand spend going to brand)</li>
+                            <li>Geo-targeting tightened to top 15 states by revenue</li>
+                            <li>LinkedIn Audience Network disabled (~$13K/mo recaptured)</li>
+                            <li>Meta Audience Network disabled; customer list activated</li>
+                            <li>Match type cleanup: AI Max and broad match under control</li>
+                            <li>Bing: auto-generated assets off, PMAX negatives added, geo aligned</li>
+                        </ul>
                     </div>
-                    <div class="card-tags">
-                        <span class="card-tag">Google Ads</span>
-                        <span class="card-tag">Meta</span>
-                        <span class="card-tag">SEO</span>
-                        <span class="card-tag">Analytics</span>
-                    </div>
+                    <div class="card-tags"><span class="card-tag">Google Ads</span><span
+                            class="card-tag">Meta</span><span class="card-tag">LinkedIn</span><span
+                            class="card-tag">Bing</span></div>
                 </div>
                 <div class="activity-card card-q1">
-                    <div class="card-icon">📊</div>
-                    <div class="card-category">Measurement</div>
-                    <div class="card-title">Tracking &amp; Attribution Setup</div>
-                    <div class="card-body">Deploy enhanced conversion tracking, server-side tagging, and multi-touch
-                        attribution modeling. Connect CRM data to ad platforms. Build a single source of truth
-                        dashboard.</div>
-                    <div class="card-tags">
-                        <span class="card-tag">GA4</span>
-                        <span class="card-tag">GTM Server</span>
-                        <span class="card-tag">Salesforce</span>
+                    <div class="card-icon">🔧</div>
+                    <div class="card-category">SEO</div>
+                    <div class="card-title">Technical Foundation Fixes</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>Cookiebot rendering fix (58 scripts blocked from Google crawl)</li>
+                            <li>193 redirect chains resolved; 9 broken redirect dead ends fixed</li>
+                            <li>Meta descriptions for top 50 pages by impression volume (877 pages have none)</li>
+                            <li>Redirect audit cadence established</li>
+                        </ul>
                     </div>
+                    <div class="card-tags"><span class="card-tag">Cookiebot</span><span
+                            class="card-tag">Redirects</span><span class="card-tag">Meta Tags</span></div>
+                </div>
+                <div class="activity-card card-q1">
+                    <div class="card-icon">🔍</div>
+                    <div class="card-category">Website Discovery</div>
+                    <div class="card-title">Technical Audit &amp; Replatform Eval</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>Technical audit: CMS constraints, crawlability gaps, CRO friction</li>
+                            <li>UX analysis: high-consideration purchase journey mapping</li>
+                            <li>Replatform recommendation and vendor evaluation</li>
+                            <li>Deliverable: discovery brief and platform recommendation</li>
+                        </ul>
+                    </div>
+                    <div class="card-tags"><span class="card-tag">CMS Audit</span><span class="card-tag">UX
+                            Review</span><span class="card-tag">Vendor Eval</span></div>
                 </div>
                 <div class="activity-card card-q1">
                     <div class="card-icon">🧭</div>
-                    <div class="card-category">Strategy</div>
-                    <div class="card-title">Audience &amp; Keyword Architecture</div>
-                    <div class="card-body">Build segmented audience personas mapped to AMA's course catalog. Develop
-                        keyword universe spanning search intent from awareness ("leadership skills") to enrollment-ready
-                        queries.</div>
-                    <div class="card-tags">
-                        <span class="card-tag">Personas</span>
-                        <span class="card-tag">Keyword Map</span>
-                        <span class="card-tag">Intent Tiers</span>
+                    <div class="card-category">Brand Discovery</div>
+                    <div class="card-title">Stakeholder Interviews &amp; Segmentation</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>Stakeholder interviews and competitive audit</li>
+                            <li>Messaging audit: does the site sell a $2,600 course?</li>
+                            <li>Pathfinder audience segmentation: mid-career accelerators, L&amp;D leads, corporate
+                                buyers</li>
+                        </ul>
                     </div>
+                    <div class="card-tags"><span class="card-tag">Pathfinder</span><span
+                            class="card-tag">Interviews</span><span class="card-tag">Competitive</span></div>
                 </div>
             </div>
             <div class="kpi-strip">
                 <div class="kpi-item">
-                    <div class="kpi-value" style="color: var(--ama-red);">100%</div>
-                    <div class="kpi-label">Channel audit complete</div>
+                    <div class="kpi-value" style="color:var(--ama-red);">~$18K</div>
+                    <div class="kpi-label">Monthly wasted spend recovered</div>
                 </div>
                 <div class="kpi-item">
-                    <div class="kpi-value" style="color: var(--ama-red);">≤ 2%</div>
-                    <div class="kpi-label">Tracking error rate</div>
+                    <div class="kpi-value" style="color:var(--ama-red);">5–10%</div>
+                    <div class="kpi-label">Branded search CVR improvement</div>
                 </div>
                 <div class="kpi-item">
-                    <div class="kpi-value" style="color: var(--ama-red);">25+</div>
-                    <div class="kpi-label">Audience segments defined</div>
+                    <div class="kpi-value" style="color:var(--ama-red);">58</div>
+                    <div class="kpi-label">Blocked scripts unblocked</div>
                 </div>
                 <div class="kpi-item">
-                    <div class="kpi-value" style="color: var(--ama-red);">Day 1</div>
-                    <div class="kpi-label">Unified dashboard live</div>
+                    <div class="kpi-value" style="color:var(--ama-red);">✓</div>
+                    <div class="kpi-label">Platform recommendation delivered</div>
                 </div>
             </div>
         </section>
 
         <div class="phase-divider">
-            <div class="phase-divider-label">Phase Shift → Launch</div>
+            <div class="phase-divider-label">Continuing Phase 1</div>
         </div>
 
-        <!-- ── Q2 ── -->
+        <!-- Q2 -->
         <section class="quarter-section" id="q2">
             <div class="quarter-header">
                 <div class="quarter-marker q2-color">Q2</div>
                 <div class="quarter-title-block">
-                    <div class="date-range">Months 4–6 · Market Entry</div>
-                    <h2>Activate Paid &amp; Organic Engines</h2>
-                    <p class="quarter-desc">Turn strategy into live campaigns. Launch restructured paid media, begin
-                        content production for SEO, and establish retargeting infrastructure. This is where spend starts
-                        flowing and early signals emerge.</p>
+                    <div class="date-range">Months 4–6 · Phase 1: Fix &amp; Discover</div>
+                    <h2>Build the Foundation</h2>
+                    <p class="quarter-desc">Media expansion, SEO content architecture, website vendor selected and
+                        development kicks off, brand strategy delivered. The full $150K/mo full-funnel plan goes active
+                        and CRM connects to ad platforms.</p>
                 </div>
             </div>
             <div class="activity-grid">
                 <div class="activity-card card-q2">
                     <div class="card-icon">🚀</div>
                     <div class="card-category">Paid Media</div>
-                    <div class="card-title">Campaign Architecture &amp; Launch</div>
-                    <div class="card-body">Restructure Google Ads account: branded, non-branded, competitor, and
-                        Performance Max campaigns. Launch Meta prospecting and retargeting. Set initial CPA targets by
-                        course vertical.</div>
-                    <div class="card-tags">
-                        <span class="card-tag">Google Ads</span>
-                        <span class="card-tag">Meta Ads</span>
-                        <span class="card-tag">PMax</span>
+                    <div class="card-title">Non-Brand Expansion &amp; CRM Integration</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>Non-brand geo campaigns live in top 15 states</li>
+                            <li>Cart abandonment retargeting activated on Meta</li>
+                            <li>Offline conversion import: SFDC data flowing into Google Ads</li>
+                            <li>Full $150K/mo full-funnel plan active</li>
+                        </ul>
                     </div>
+                    <div class="card-tags"><span class="card-tag">Non-Brand</span><span
+                            class="card-tag">Retargeting</span><span class="card-tag">SFDC</span></div>
                 </div>
                 <div class="activity-card card-q2">
                     <div class="card-icon">✍️</div>
-                    <div class="card-category">Content &amp; SEO</div>
-                    <div class="card-title">Pillar Content Production</div>
-                    <div class="card-body">Publish 12+ high-authority pillar pages targeting AMA's top course
-                        categories. Optimize existing resource library. Begin technical SEO fixes: site speed, schema
-                        markup, internal linking.</div>
-                    <div class="card-tags">
-                        <span class="card-tag">Pillar Pages</span>
-                        <span class="card-tag">Technical SEO</span>
-                        <span class="card-tag">Schema</span>
+                    <div class="card-category">SEO</div>
+                    <div class="card-title">Schema, Content Clusters &amp; Title Tags</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>Organization, Course, FAQPage, Event schema sitewide (absent across 20M+ impressions)
+                            </li>
+                            <li>Content clusters: Conflict Resolution, Communication Skills, Leadership</li>
+                            <li>Internal links from top 20 articles to seminar/training pages</li>
+                            <li>Title tag rewrites on 785 pages truncated by Google</li>
+                        </ul>
                     </div>
+                    <div class="card-tags"><span class="card-tag">Schema</span><span class="card-tag">Content
+                            Clusters</span><span class="card-tag">Title Tags</span></div>
                 </div>
                 <div class="activity-card card-q2">
-                    <div class="card-icon">🎯</div>
-                    <div class="card-category">CRO</div>
-                    <div class="card-title">Landing Page Testing Framework</div>
-                    <div class="card-body">Build dedicated landing pages for top-5 enrollment drivers. Deploy A/B
-                        testing framework. Establish baseline conversion rates for paid traffic by course and audience
-                        segment.</div>
-                    <div class="card-tags">
-                        <span class="card-tag">LP Build</span>
-                        <span class="card-tag">A/B Tests</span>
-                        <span class="card-tag">Hotjar</span>
+                    <div class="card-icon">🏗️</div>
+                    <div class="card-category">Website</div>
+                    <div class="card-title">Platform Selection &amp; Dev Kickoff</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>Platform selected; UX/design kickoff</li>
+                            <li>Development begins Month 5</li>
+                            <li>Content migration mapping underway</li>
+                        </ul>
                     </div>
+                    <div class="card-tags"><span class="card-tag">Replatform</span><span
+                            class="card-tag">UX/UI</span><span class="card-tag">Migration</span></div>
+                </div>
+                <div class="activity-card card-q2">
+                    <div class="card-icon">💎</div>
+                    <div class="card-category">Brand</div>
+                    <div class="card-title">Strategy &amp; Messaging Framework</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>Brand strategy and messaging framework delivered</li>
+                            <li>Value proposition hierarchy for the $2,600+ purchase</li>
+                            <li>Tone/voice guidelines complete</li>
+                        </ul>
+                    </div>
+                    <div class="card-tags"><span class="card-tag">Messaging</span><span class="card-tag">Value
+                            Props</span><span class="card-tag">Voice/Tone</span></div>
                 </div>
             </div>
             <div class="kpi-strip">
                 <div class="kpi-item">
-                    <div class="kpi-value" style="color: var(--ama-navy);">−15%</div>
-                    <div class="kpi-label">Cost per enrollment vs. baseline</div>
+                    <div class="kpi-value" style="color:var(--ama-navy);">$20–40K</div>
+                    <div class="kpi-label">Monthly incremental non-brand revenue</div>
                 </div>
                 <div class="kpi-item">
-                    <div class="kpi-value" style="color: var(--ama-navy);">12</div>
-                    <div class="kpi-label">Pillar pages published</div>
+                    <div class="kpi-value" style="color:var(--ama-navy);">3</div>
+                    <div class="kpi-label">Content clusters live</div>
                 </div>
                 <div class="kpi-item">
-                    <div class="kpi-value" style="color: var(--ama-navy);">5</div>
-                    <div class="kpi-label">LP variants in test</div>
+                    <div class="kpi-value" style="color:var(--ama-navy);">20M+</div>
+                    <div class="kpi-label">Impressions with schema coverage</div>
                 </div>
                 <div class="kpi-item">
-                    <div class="kpi-value" style="color: var(--ama-navy);">3×</div>
-                    <div class="kpi-label">Retargeting pool growth</div>
+                    <div class="kpi-value" style="color:var(--ama-navy);">✓</div>
+                    <div class="kpi-label">CRM connected to Google Ads</div>
                 </div>
             </div>
         </section>
 
         <div class="phase-divider">
-            <div class="phase-divider-label">Phase Shift → Scale</div>
+            <div class="phase-divider-label">Phase Shift → Build</div>
         </div>
 
-        <!-- ── Q3 ── -->
+        <!-- Q3 -->
         <section class="quarter-section" id="q3">
             <div class="quarter-header">
                 <div class="quarter-marker q3-color">Q3</div>
                 <div class="quarter-title-block">
-                    <div class="date-range">Months 7–9 · Scaling Operations</div>
-                    <h2>Multiply What's Working</h2>
-                    <p class="quarter-desc">Data from Q2 informs aggressive scaling decisions. Double down on winning
-                        channels, expand audience targeting, and introduce video and programmatic layers. SEO content
-                        begins ranking and compounding.</p>
+                    <div class="date-range">Months 7–9 · Phase 2: Build</div>
+                    <h2>Develop</h2>
+                    <p class="quarter-desc">Website in full development, brand identity created, SFDC/Marketing Cloud
+                        integration begins, media expanding to upper funnel. Level.Signal data collection starts and AI
+                        citation monitoring goes live.</p>
                 </div>
             </div>
             <div class="activity-grid">
                 <div class="activity-card card-q3">
-                    <div class="card-icon">📈</div>
+                    <div class="card-icon">📡</div>
                     <div class="card-category">Paid Media</div>
-                    <div class="card-title">Budget Scaling &amp; Channel Expansion</div>
-                    <div class="card-body">Increase spend on top-performing campaigns by 40–60%. Launch YouTube pre-roll
-                        and LinkedIn Sponsored Content targeting HR/L&D decision-makers. Introduce programmatic display
-                        for awareness.</div>
-                    <div class="card-tags">
-                        <span class="card-tag">YouTube</span>
-                        <span class="card-tag">LinkedIn</span>
-                        <span class="card-tag">Programmatic</span>
+                    <div class="card-title">Level.Signal &amp; Upper-Funnel Testing</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>Level.Signal data collection begins (30-day data flow before VBB switch)</li>
+                            <li>Upper-funnel social testing: LinkedIn prospecting, Meta awareness</li>
+                            <li>First offline conversion data: performance reviewed against downstream revenue</li>
+                        </ul>
                     </div>
-                </div>
-                <div class="activity-card card-q3">
-                    <div class="card-icon">🔗</div>
-                    <div class="card-category">SEO</div>
-                    <div class="card-title">Authority Building &amp; Digital PR</div>
-                    <div class="card-body">Launch digital PR campaign positioning AMA leadership as thought leaders.
-                        Secure guest placements in HR/management publications. Backlink acquisition targeting DA 50+
-                        domains.</div>
-                    <div class="card-tags">
-                        <span class="card-tag">Link Building</span>
-                        <span class="card-tag">Digital PR</span>
-                        <span class="card-tag">Thought Leadership</span>
-                    </div>
+                    <div class="card-tags"><span class="card-tag">Level.Signal</span><span
+                            class="card-tag">LinkedIn</span><span class="card-tag">Meta</span></div>
                 </div>
                 <div class="activity-card card-q3">
                     <div class="card-icon">🤖</div>
-                    <div class="card-category">AI &amp; Automation</div>
-                    <div class="card-title">AI Search Optimization</div>
-                    <div class="card-body">Optimize AMA content for AI Overview inclusion and conversational search.
-                        Implement structured data for courses, pricing, and reviews. Monitor AI citation share vs.
-                        competitors.</div>
-                    <div class="card-tags">
-                        <span class="card-tag">AI Overviews</span>
-                        <span class="card-tag">Structured Data</span>
-                        <span class="card-tag">ChatGPT Ads</span>
+                    <div class="card-category">SEO</div>
+                    <div class="card-title">Commercial Content &amp; AI Citations</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>Commercial query content for high-intent keywords stuck on page 2</li>
+                            <li>AI citation visibility monitoring live (ChatGPT, Perplexity, Google AIO)</li>
+                            <li>Content clusters expanded to top 10 training topics</li>
+                        </ul>
                     </div>
+                    <div class="card-tags"><span class="card-tag">AI Citations</span><span class="card-tag">Page 2
+                            Keywords</span><span class="card-tag">Content</span></div>
+                </div>
+                <div class="activity-card card-q3">
+                    <div class="card-icon">🎨</div>
+                    <div class="card-category">Website &amp; Brand</div>
+                    <div class="card-title">Design Complete, Dev In Progress</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>UX/UI design complete</li>
+                            <li>Front-end development in progress on new stack</li>
+                            <li>Content migration mapping finalized</li>
+                            <li>Visual identity developed; campaign creative in production</li>
+                            <li>Website copy written in new brand voice</li>
+                        </ul>
+                    </div>
+                    <div class="card-tags"><span class="card-tag">UX/UI</span><span class="card-tag">Dev</span><span
+                            class="card-tag">Brand Identity</span></div>
+                </div>
+                <div class="activity-card card-q3">
+                    <div class="card-icon">📧</div>
+                    <div class="card-category">CRM / Marketing Cloud</div>
+                    <div class="card-title">SFDC Integration &amp; Lead Scoring</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>SFDC + Marketing Cloud integration configured</li>
+                            <li>Lead scoring model built</li>
+                            <li>Consideration-phase email nurture sequences drafted and tested</li>
+                        </ul>
+                    </div>
+                    <div class="card-tags"><span class="card-tag">SFDC</span><span class="card-tag">Marketing
+                            Cloud</span><span class="card-tag">Lead Scoring</span></div>
                 </div>
             </div>
             <div class="kpi-strip">
                 <div class="kpi-item">
-                    <div class="kpi-value" style="color: var(--ama-slate);">+50%</div>
-                    <div class="kpi-label">Paid enrollment volume</div>
+                    <div class="kpi-value" style="color:var(--ama-slate);">50%+</div>
+                    <div class="kpi-label">Website build completion</div>
                 </div>
                 <div class="kpi-item">
-                    <div class="kpi-value" style="color: var(--ama-slate);">+30%</div>
-                    <div class="kpi-label">Organic traffic growth</div>
+                    <div class="kpi-value" style="color:var(--ama-slate);">↑ QoQ</div>
+                    <div class="kpi-label">Organic sessions trending up</div>
                 </div>
                 <div class="kpi-item">
-                    <div class="kpi-value" style="color: var(--ama-slate);">15+</div>
-                    <div class="kpi-label">DA 50+ backlinks earned</div>
+                    <div class="kpi-value" style="color:var(--ama-slate);">✓</div>
+                    <div class="kpi-label">AI citation baseline established</div>
                 </div>
                 <div class="kpi-item">
-                    <div class="kpi-value" style="color: var(--ama-slate);">4</div>
-                    <div class="kpi-label">Active channels</div>
+                    <div class="kpi-value" style="color:var(--ama-slate);">↑ MoM</div>
+                    <div class="kpi-label">Non-brand paid growing</div>
                 </div>
             </div>
         </section>
 
         <div class="phase-divider">
-            <div class="phase-divider-label">Phase Shift → Optimize</div>
+            <div class="phase-divider-label">Continuing Phase 2</div>
         </div>
 
-        <!-- ── Q4 ── -->
+        <!-- Q4 -->
         <section class="quarter-section" id="q4">
             <div class="quarter-header">
                 <div class="quarter-marker q4-color">Q4</div>
                 <div class="quarter-title-block">
-                    <div class="date-range">Months 10–12 · Optimization &amp; Intelligence</div>
-                    <h2>Precision Tuning at Scale</h2>
-                    <p class="quarter-desc">Year-one data unlocks a new level of intelligence. Refine bidding models
-                        with CRM outcome data. Implement predictive analytics. Ruthlessly cut underperformers and
-                        reallocate to what converts to revenue.</p>
+                    <div class="date-range">Months 10–12 · Phase 2: Build</div>
+                    <h2>Pre-Launch</h2>
+                    <p class="quarter-desc">Website in QA, brand finalized, Marketing Cloud active, media scaling with
+                        Level.Signal. Value-based bidding goes live on 9+ months of data. Everything converges toward a
+                        coordinated launch.</p>
                 </div>
             </div>
             <div class="activity-grid">
                 <div class="activity-card card-q4">
-                    <div class="card-icon">🧠</div>
-                    <div class="card-category">Performance</div>
-                    <div class="card-title">CRM-Informed Bidding &amp; ROAS</div>
-                    <div class="card-body">Feed actual enrollment and revenue data back into Google and Meta bidding
-                        algorithms. Shift from CPA-based to ROAS-based optimization. Build lifetime value models by
-                        course category.</div>
-                    <div class="card-tags">
-                        <span class="card-tag">Value-Based Bidding</span>
-                        <span class="card-tag">LTV Models</span>
-                        <span class="card-tag">ROAS</span>
+                    <div class="card-icon">⚡</div>
+                    <div class="card-category">Paid Media</div>
+                    <div class="card-title">Level.Signal Fully Engaged</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>SFDC first-party data flowing into Google Ads bidding</li>
+                            <li>Full-funnel plan optimized on 9+ months of performance data</li>
+                            <li>Upper-funnel awareness informing non-brand geo expansion</li>
+                        </ul>
                     </div>
+                    <div class="card-tags"><span class="card-tag">VBB</span><span
+                            class="card-tag">Level.Signal</span><span class="card-tag">Optimization</span></div>
                 </div>
                 <div class="activity-card card-q4">
-                    <div class="card-icon">🧪</div>
-                    <div class="card-category">Testing</div>
-                    <div class="card-title">Full-Funnel CRO Program</div>
-                    <div class="card-body">Move beyond landing pages to test enrollment form UX, pricing display, course
-                        page layouts, and post-click nurture sequences. Target 15–20% improvement in site-wide
-                        conversion rate.</div>
-                    <div class="card-tags">
-                        <span class="card-tag">Form Optimization</span>
-                        <span class="card-tag">UX Testing</span>
-                        <span class="card-tag">Nurture Flows</span>
+                    <div class="card-icon">🔀</div>
+                    <div class="card-category">SEO</div>
+                    <div class="card-title">Migration Plan Finalized</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>SEO migration plan: 301 mapping, schema transfer, content structure preservation</li>
+                            <li>Authority and external signals building toward new site</li>
+                        </ul>
                     </div>
+                    <div class="card-tags"><span class="card-tag">301 Mapping</span><span class="card-tag">Schema
+                            Transfer</span><span class="card-tag">Link Equity</span></div>
                 </div>
                 <div class="activity-card card-q4">
-                    <div class="card-icon">📋</div>
-                    <div class="card-category">Reporting</div>
-                    <div class="card-title">Year-One Impact Assessment</div>
-                    <div class="card-body">Deliver comprehensive Year 1 performance report. Channel-by-channel ROI
-                        analysis. Strategic recommendations for Year 2. Board-ready executive summary with YoY
-                        enrollment and revenue comps.</div>
-                    <div class="card-tags">
-                        <span class="card-tag">Executive Report</span>
-                        <span class="card-tag">ROI Analysis</span>
-                        <span class="card-tag">Y2 Plan</span>
+                    <div class="card-icon">✅</div>
+                    <div class="card-category">Website</div>
+                    <div class="card-title">QA, Accessibility &amp; Launch Readiness</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>QA, accessibility, and Core Web Vitals review</li>
+                            <li>SEO migration fully implemented in staging</li>
+                            <li>Stakeholder sign-off and launch readiness confirmed</li>
+                        </ul>
                     </div>
+                    <div class="card-tags"><span class="card-tag">QA</span><span class="card-tag">CWV</span><span
+                            class="card-tag">Accessibility</span></div>
+                </div>
+                <div class="activity-card card-q4">
+                    <div class="card-icon">📬</div>
+                    <div class="card-category">CRM / Marketing Cloud</div>
+                    <div class="card-title">Nurture Flows Live &amp; Segmented</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>All nurture sequences QA'd and live</li>
+                            <li>Segmentation finalized: individual buyer, L&amp;D lead, corporate</li>
+                            <li>Pre-launch testing complete across all flows</li>
+                        </ul>
+                    </div>
+                    <div class="card-tags"><span class="card-tag">Nurture</span><span
+                            class="card-tag">Segmentation</span><span class="card-tag">QA</span></div>
                 </div>
             </div>
             <div class="kpi-strip">
                 <div class="kpi-item">
-                    <div class="kpi-value" style="color: #7B4B94;">−25%</div>
-                    <div class="kpi-label">Cost per enrollment vs. Q2</div>
+                    <div class="kpi-value" style="color:#7B4B94;">✓</div>
+                    <div class="kpi-label">Website launch-ready</div>
                 </div>
                 <div class="kpi-item">
-                    <div class="kpi-value" style="color: #7B4B94;">+20%</div>
-                    <div class="kpi-label">Site-wide conversion rate lift</div>
+                    <div class="kpi-value" style="color:#7B4B94;">✓</div>
+                    <div class="kpi-label">Brand assets finalized</div>
                 </div>
                 <div class="kpi-item">
-                    <div class="kpi-value" style="color: #7B4B94;">4:1+</div>
-                    <div class="kpi-label">Blended ROAS target</div>
+                    <div class="kpi-value" style="color:#7B4B94;">✓</div>
+                    <div class="kpi-label">Marketing Cloud active</div>
                 </div>
                 <div class="kpi-item">
-                    <div class="kpi-value" style="color: #7B4B94;">100%</div>
-                    <div class="kpi-label">CRM data loop closed</div>
+                    <div class="kpi-value" style="color:#7B4B94;">✓</div>
+                    <div class="kpi-label">Level.Signal predictive bidding live</div>
                 </div>
             </div>
         </section>
 
         <div class="phase-divider">
-            <div class="phase-divider-label">Year 2 Begins → Expand</div>
+            <div class="phase-divider-label">Phase Shift → Launch &amp; Scale</div>
         </div>
 
-        <!-- ── Q5 ── -->
+        <!-- Q5 -->
         <section class="quarter-section" id="q5">
             <div class="quarter-header">
                 <div class="quarter-marker q5-color">Q5</div>
                 <div class="quarter-title-block">
-                    <div class="date-range">Months 13–15 · Strategic Expansion</div>
-                    <h2>New Markets, New Modalities</h2>
-                    <p class="quarter-desc">With a proven domestic playbook, extend into AMA's international markets and
-                        corporate solutions vertical. Launch podcast advertising, influencer partnerships in L&D, and
-                        ABM programs targeting enterprise buyers.</p>
+                    <div class="date-range">Months 13–15 · Phase 3: Launch &amp; Scale</div>
+                    <h2>Launch</h2>
+                    <p class="quarter-desc">New site goes live with clean SEO migration. Brand deploys across all
+                        touchpoints. Reddit and YouTube open as new channels. Full lifecycle CRM programs activate. The
+                        culmination of 12 months of groundwork.</p>
                 </div>
             </div>
             <div class="activity-grid">
                 <div class="activity-card card-q5">
-                    <div class="card-icon">🌍</div>
-                    <div class="card-category">Expansion</div>
-                    <div class="card-title">International &amp; Corporate Campaigns</div>
-                    <div class="card-body">Adapt top-performing campaigns for Canadian, EMEA, and APAC markets. Launch
-                        ABM program targeting Fortune 1000 L&D departments. Build custom corporate solutions pipeline.
+                    <div class="card-icon">🎯</div>
+                    <div class="card-category">Paid Media</div>
+                    <div class="card-title">New Brand Creative &amp; Channels</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>Creative refresh across all channels in new brand</li>
+                            <li>Reddit + YouTube prospecting (10% of budget for new channel testing)</li>
+                            <li>Full attribution on new site: enhanced conversions, proper event tracking</li>
+                        </ul>
                     </div>
-                    <div class="card-tags">
-                        <span class="card-tag">ABM</span>
-                        <span class="card-tag">International</span>
-                        <span class="card-tag">Enterprise</span>
-                    </div>
+                    <div class="card-tags"><span class="card-tag">Reddit</span><span
+                            class="card-tag">YouTube</span><span class="card-tag">Creative</span></div>
                 </div>
                 <div class="activity-card card-q5">
-                    <div class="card-icon">🎙️</div>
-                    <div class="card-category">Brand</div>
-                    <div class="card-title">Audio &amp; Influencer Strategy</div>
-                    <div class="card-body">Sponsor top management and HR podcasts. Partner with L&D influencers for
-                        co-branded content. Launch AMA's own thought-leadership video series optimized for LinkedIn and
-                        YouTube.</div>
-                    <div class="card-tags">
-                        <span class="card-tag">Podcast Ads</span>
-                        <span class="card-tag">Influencer</span>
-                        <span class="card-tag">Video</span>
+                    <div class="card-icon">📊</div>
+                    <div class="card-category">SEO</div>
+                    <div class="card-title">Post-Migration &amp; AI Growth</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>Post-migration monitoring: rankings, crawl status, indexed pages</li>
+                            <li>AI citation growth vs. baseline: first QoQ report</li>
+                        </ul>
                     </div>
+                    <div class="card-tags"><span class="card-tag">Migration</span><span class="card-tag">AI
+                            Citations</span><span class="card-tag">Rankings</span></div>
                 </div>
                 <div class="activity-card card-q5">
-                    <div class="card-icon">⚡</div>
-                    <div class="card-category">Technology</div>
-                    <div class="card-title">Marketing Automation &amp; Personalization</div>
-                    <div class="card-body">Deploy dynamic content personalization on amanet.org based on visitor
-                        behavior and firmographic data. Automate lead nurture sequences by industry vertical and career
-                        stage.</div>
-                    <div class="card-tags">
-                        <span class="card-tag">Personalization</span>
-                        <span class="card-tag">Lead Scoring</span>
-                        <span class="card-tag">Automation</span>
+                    <div class="card-icon">🌐</div>
+                    <div class="card-category">Website</div>
+                    <div class="card-title">Post-Launch &amp; CRO Queue</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>Post-launch monitoring: Core Web Vitals, crawl errors, 404s</li>
+                            <li>CRO test queue: pricing page, registration flow, course landing pages</li>
+                        </ul>
                     </div>
+                    <div class="card-tags"><span class="card-tag">CRO</span><span class="card-tag">CWV</span><span
+                            class="card-tag">Monitoring</span></div>
+                </div>
+                <div class="activity-card card-q5">
+                    <div class="card-icon">🔄</div>
+                    <div class="card-category">CRM / Marketing Cloud</div>
+                    <div class="card-title">Full Lifecycle Programs Live</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>Full lifecycle: acquisition, consideration, cart abandonment, re-engagement</li>
+                            <li>B2B/corporate nurture sequences active</li>
+                            <li>Brand deployed across paid, email, social, and owned channels</li>
+                        </ul>
+                    </div>
+                    <div class="card-tags"><span class="card-tag">Lifecycle</span><span class="card-tag">B2B
+                            Nurture</span><span class="card-tag">Full Deploy</span></div>
                 </div>
             </div>
             <div class="kpi-strip">
                 <div class="kpi-item">
-                    <div class="kpi-value" style="color: var(--ama-red-dark);">3</div>
-                    <div class="kpi-label">New geo markets live</div>
+                    <div class="kpi-value" style="color:var(--ama-red-dark);">Stable+</div>
+                    <div class="kpi-label">Organic traffic within 30 days</div>
                 </div>
                 <div class="kpi-item">
-                    <div class="kpi-value" style="color: var(--ama-red-dark);">50+</div>
-                    <div class="kpi-label">ABM target accounts</div>
+                    <div class="kpi-value" style="color:var(--ama-red-dark);">↑ QoQ</div>
+                    <div class="kpi-label">AI citation growth measurable</div>
                 </div>
                 <div class="kpi-item">
-                    <div class="kpi-value" style="color: var(--ama-red-dark);">+40%</div>
-                    <div class="kpi-label">Corporate pipeline growth</div>
+                    <div class="kpi-value" style="color:var(--ama-red-dark);">↑ ROAS</div>
+                    <div class="kpi-label">Improving on stronger signal</div>
                 </div>
                 <div class="kpi-item">
-                    <div class="kpi-value" style="color: var(--ama-red-dark);">8</div>
-                    <div class="kpi-label">Active channels</div>
+                    <div class="kpi-value" style="color:var(--ama-red-dark);">✓</div>
+                    <div class="kpi-label">Brand live all touchpoints</div>
                 </div>
             </div>
         </section>
 
         <div class="phase-divider">
-            <div class="phase-divider-label">Final Phase → Maturity</div>
+            <div class="phase-divider-label">Final Phase → Optimize &amp; Scale</div>
         </div>
 
-        <!-- ── Q6 ── -->
+        <!-- Q6 -->
         <section class="quarter-section" id="q6">
             <div class="quarter-header">
                 <div class="quarter-marker q6-color">Q6</div>
                 <div class="quarter-title-block">
-                    <div class="date-range">Months 16–18 · Maturity &amp; Compounding</div>
-                    <h2>The Flywheel Takes&nbsp;Hold</h2>
-                    <p class="quarter-desc">Organic compounds. Paid becomes efficient. The brand halo lifts all boats.
-                        This quarter is about protecting gains, systematizing operations, and building the case for
-                        sustained investment based on irrefutable results.</p>
+                    <div class="date-range">Months 16–18 · Phase 3: Launch &amp; Scale</div>
+                    <h2>Optimize &amp; Scale</h2>
+                    <p class="quarter-desc">CRO on the new site, media scaling toward the $300K model, SEO compounding,
+                        program refinement. Revenue trending toward the $40–50K/day target. Predictive VBB fully
+                        optimized on 12+ months of downstream data.</p>
                 </div>
             </div>
             <div class="activity-grid">
                 <div class="activity-card card-q6">
-                    <div class="card-icon">♻️</div>
-                    <div class="card-category">Growth</div>
-                    <div class="card-title">Content Flywheel &amp; Evergreen Engine</div>
-                    <div class="card-body">Transition from net-new content production to refresh-and-expand model. Top
-                        pillar pages generate consistent organic enrollments. Automate content distribution across
-                        channels.</div>
-                    <div class="card-tags">
-                        <span class="card-tag">Content Refresh</span>
-                        <span class="card-tag">Syndication</span>
-                        <span class="card-tag">Evergreen</span>
+                    <div class="card-icon">📈</div>
+                    <div class="card-category">Paid Media</div>
+                    <div class="card-title">Scale Toward $300K Model</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>Scale toward $300K budget; Reddit/YouTube growing, mid-funnel deepening</li>
+                            <li>Predictive VBB fully optimized on 12+ months of downstream data</li>
+                            <li>Budget shifted toward highest-performing geo, segment, and product mix</li>
+                        </ul>
                     </div>
+                    <div class="card-tags"><span class="card-tag">$300K Model</span><span
+                            class="card-tag">VBB</span><span class="card-tag">Scale</span></div>
+                </div>
+                <div class="activity-card card-q6">
+                    <div class="card-icon">🔗</div>
+                    <div class="card-category">SEO</div>
+                    <div class="card-title">Content Scaling &amp; AI Expansion</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>Content program scaling; external link acquisition underway</li>
+                            <li>AI visibility expansion: structured content for ChatGPT and Perplexity</li>
+                        </ul>
+                    </div>
+                    <div class="card-tags"><span class="card-tag">Link Building</span><span class="card-tag">AI
+                            Visibility</span><span class="card-tag">Content</span></div>
+                </div>
+                <div class="activity-card card-q6">
+                    <div class="card-icon">🧪</div>
+                    <div class="card-category">Website</div>
+                    <div class="card-title">CRO Testing &amp; Personalization</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>A/B testing: pricing presentation, trust signals, course page layout</li>
+                            <li>Personalization: returning vs. new visitor, individual vs. corporate buyer</li>
+                        </ul>
+                    </div>
+                    <div class="card-tags"><span class="card-tag">A/B Tests</span><span
+                            class="card-tag">Personalization</span><span class="card-tag">CRO</span></div>
                 </div>
                 <div class="activity-card card-q6">
                     <div class="card-icon">🏆</div>
-                    <div class="card-category">Performance</div>
-                    <div class="card-title">Predictive Enrollment Modeling</div>
-                    <div class="card-body">Deploy ML-based enrollment forecasting models. Predict seasonal demand by
-                        course category. Automate budget pacing based on projected enrollment curves and margin targets.
+                    <div class="card-category">CRM / Marketing Cloud</div>
+                    <div class="card-title">Winning Sequences Scaled</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>Winning sequences identified and scaled</li>
+                            <li>Re-engagement and win-back programs live</li>
+                            <li>Marketing Cloud demonstrating measurable pipeline impact in SFDC</li>
+                        </ul>
                     </div>
-                    <div class="card-tags">
-                        <span class="card-tag">Forecasting</span>
-                        <span class="card-tag">Budget Pacing</span>
-                        <span class="card-tag">ML Models</span>
-                    </div>
-                </div>
-                <div class="activity-card card-q6">
-                    <div class="card-icon">📐</div>
-                    <div class="card-category">Strategic</div>
-                    <div class="card-title">18-Month Business Impact Report</div>
-                    <div class="card-body">Full partnership impact assessment. Revenue attribution across all channels.
-                        Competitive share-of-voice analysis. Strategic roadmap for months 19–36 with growth scenarios.
-                    </div>
-                    <div class="card-tags">
-                        <span class="card-tag">Impact Report</span>
-                        <span class="card-tag">Competitive Intel</span>
-                        <span class="card-tag">Roadmap v2</span>
-                    </div>
+                    <div class="card-tags"><span class="card-tag">Win-Back</span><span
+                            class="card-tag">Pipeline</span><span class="card-tag">Scale</span></div>
                 </div>
             </div>
             <div class="kpi-strip">
                 <div class="kpi-item">
-                    <div class="kpi-value" style="color: #2D6A4F;">−40%</div>
-                    <div class="kpi-label">Blended CPA vs. Month 1</div>
+                    <div class="kpi-value" style="color:#2D6A4F;">$40–50K</div>
+                    <div class="kpi-label">Daily revenue target</div>
                 </div>
                 <div class="kpi-item">
-                    <div class="kpi-value" style="color: #2D6A4F;">+100%</div>
-                    <div class="kpi-label">Organic enrollment growth</div>
+                    <div class="kpi-value" style="color:#2D6A4F;">25%+</div>
+                    <div class="kpi-label">Non-brand share of attributed revenue</div>
                 </div>
                 <div class="kpi-item">
-                    <div class="kpi-value" style="color: #2D6A4F;">6:1+</div>
-                    <div class="kpi-label">Blended ROAS target</div>
+                    <div class="kpi-value" style="color:#2D6A4F;">↑</div>
+                    <div class="kpi-label">Organic conversions growing vs. baseline</div>
                 </div>
                 <div class="kpi-item">
-                    <div class="kpi-value" style="color: #2D6A4F;">Y2</div>
-                    <div class="kpi-label">Roadmap delivered</div>
+                    <div class="kpi-value" style="color:#2D6A4F;">✓</div>
+                    <div class="kpi-label">Marketing Cloud pipeline impact proven</div>
                 </div>
             </div>
         </section>
+    </div>
 
+    <!-- ═══════ WEBSITE ASSESSMENT ═══════ -->
+    <div class="assessment-section">
+        <div class="assessment-card">
+            <h3>Website Assessment</h3>
+            <p style="font-size:1rem;line-height:1.7;color:var(--text-secondary);margin-bottom:32px;">The current site
+                has three compounding problems that limit what can be fixed before a rebuild. Technical SEO fixes within
+                the current CMS will produce real gains and inform the new build, but they have a ceiling.</p>
+            <div class="assessment-grid">
+                <div class="assess-col constraints">
+                    <h4>Today's Constraints</h4>
+                    <p>Custom CMS blocks key technical SEO work. Cookiebot alone blocks 58 scripts from Google's
+                        crawler; schema and structured data are difficult to implement at scale.</p>
+                    <p>The site is not built to convert a $2,600 purchase: no outcome proof, no structured journey from
+                        research to registration, UX that predates modern buyer expectations.</p>
+                    <p>Performance is inconsistent day-to-day with limited diagnostic visibility in the current
+                        environment.</p>
+                </div>
+                <div class="assess-col solutions">
+                    <h4>What the New Site Solves</h4>
+                    <p>Built on a modern stack: technical SEO by default (crawlable, indexed, structured data native).
+                    </p>
+                    <p>UX designed around a high-consideration purchase: outcome-led, instructor-credibility-forward,
+                        clear path from research to registration.</p>
+                    <p>Brand story can be fully told. The $2,600 price point requires it. CRO testing infrastructure
+                        built in from day one.</p>
+                </div>
+            </div>
+            <div class="timeline-bar">
+                <div class="timeline-bar-segment">
+                    <div class="seg-label">Discovery</div>
+                    <div class="seg-months">M1–3</div>
+                </div>
+                <div class="timeline-bar-segment">
+                    <div class="seg-label">Vendor/Platform</div>
+                    <div class="seg-months">M3–4</div>
+                </div>
+                <div class="timeline-bar-segment" style="flex:2.5;">
+                    <div class="seg-label">Development</div>
+                    <div class="seg-months">M5–14</div>
+                </div>
+                <div class="timeline-bar-segment">
+                    <div class="seg-label">Launch</div>
+                    <div class="seg-months">M15</div>
+                </div>
+            </div>
+        </div>
+        <div style="margin-top:40px;">
+            <h3
+                style="font-family:var(--font-display);font-size:1.6rem;font-weight:800;margin-bottom:24px;color:var(--text-primary);">
+                Measurement Framework</h3>
+            <div class="measurement-grid">
+                <div class="measure-card">
+                    <h5>Weekly Tracking</h5>
+                    <p>Daily revenue vs. $32K baseline and $50K target. Paid media spend pacing, ROAS by campaign type.
+                        Top keyword position movement and non-brand impression share.</p>
+                </div>
+                <div class="measure-card">
+                    <h5>Monthly Reporting (Pulse)</h5>
+                    <p>Full-funnel attribution: CPA by channel. AI citation share of voice vs. baseline. SFDC pipeline
+                        attributed to marketing. Organic traffic and conversion contribution.</p>
+                </div>
+                <div class="measure-card">
+                    <h5>Quarterly Reviews</h5>
+                    <p>Revenue trend vs. target. Organic share of total conversions. Brand lift indicators (branded
+                        search volume, direct traffic). Strategic assessment and next-quarter adjustments.</p>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- ═══════ FOOTER CTA ═══════ -->
     <section class="footer-cta">
-        <h2>Ready to Build Something That Actually Performs?</h2>
-        <p>This roadmap is the starting line. Let's talk about what 18 months of focused execution looks like for AMA.
-        </p>
-        <a href="#" class="cta-btn">
-            Schedule a Strategy Call
-            <span class="arrow-icon">→</span>
-        </a>
+        <h2>Revenue recovery is the starting line. Durable growth is the destination.</h2>
+        <p>This roadmap turns tactical fixes into strategic infrastructure. Let's build it together.</p>
+        <a href="#" class="cta-btn">Schedule a Strategy Call <span class="arrow-icon">→</span></a>
     </section>
 
     <script>
-        // ─── Scroll-triggered visibility ───
         const sections = document.querySelectorAll('.quarter-section');
         const pills = document.querySelectorAll('.q-pill');
 
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
-
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
         sections.forEach(s => observer.observe(s));
 
-        // ─── Active pill tracking ───
         const pillObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const id = entry.target.id;
-                    pills.forEach(p => {
-                        p.classList.toggle('active', p.getAttribute('href') === '#' + id);
-                    });
+                    pills.forEach(p => p.classList.toggle('active', p.getAttribute('href') === '#' + id));
                 }
             });
-        }, { threshold: 0.3, rootMargin: '-80px 0px -50% 0px' });
-
+        }, { threshold: 0.25, rootMargin: '-100px 0px -50% 0px' });
         sections.forEach(s => pillObserver.observe(s));
 
-        // ─── Smooth scroll for pills ───
         pills.forEach(pill => {
             pill.addEventListener('click', (e) => {
                 e.preventDefault();
                 const target = document.querySelector(pill.getAttribute('href'));
                 if (target) {
-                    const offset = 80;
-                    const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    const y = target.getBoundingClientRect().top + window.pageYOffset - 120;
                     window.scrollTo({ top: y, behavior: 'smooth' });
                 }
             });
         });
 
-        // ─── Staggered card animation ───
         const cardObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry, i) => {
+            entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    const cards = entry.target.querySelectorAll('.activity-card');
-                    cards.forEach((card, idx) => {
+                    entry.target.querySelectorAll('.activity-card').forEach((card, idx) => {
                         card.style.opacity = '0';
                         card.style.transform = 'translateY(24px)';
-                        card.style.transition = `all 0.6s cubic-bezier(0.16, 1, 0.3, 1) ${idx * 0.12}s`;
-                        requestAnimationFrame(() => {
-                            requestAnimationFrame(() => {
-                                card.style.opacity = '1';
-                                card.style.transform = 'translateY(0)';
-                            });
-                        });
+                        card.style.transition = `all 0.6s cubic-bezier(0.16, 1, 0.3, 1) ${idx * 0.1}s`;
+                        requestAnimationFrame(() => requestAnimationFrame(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }));
                     });
                     cardObserver.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.15 });
-
+        }, { threshold: 0.1 });
         document.querySelectorAll('.activity-grid').forEach(grid => cardObserver.observe(grid));
     </script>
 </body>
