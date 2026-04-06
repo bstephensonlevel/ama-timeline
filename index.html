@@ -1747,15 +1747,16 @@
         }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
         sections.forEach(s => observer.observe(s));
 
-        const pillObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const id = entry.target.id;
-                    pills.forEach(p => p.classList.toggle('active', p.getAttribute('href') === '#' + id));
-                }
+        function updateActiveNav() {
+            let active = null;
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 160 && rect.bottom > 160) active = section.id;
             });
-        }, { threshold: 0.25, rootMargin: '-100px 0px -50% 0px' });
-        sections.forEach(s => pillObserver.observe(s));
+            pills.forEach(p => p.classList.toggle('active', !!active && p.getAttribute('href') === '#' + active));
+        }
+        window.addEventListener('scroll', updateActiveNav, { passive: true });
+        updateActiveNav();
 
         pills.forEach(pill => {
             pill.addEventListener('click', (e) => {
